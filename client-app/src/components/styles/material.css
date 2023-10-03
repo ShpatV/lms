@@ -1,0 +1,48 @@
+.m-button {
+  display: flex;
+  padding: 5px;
+}
+.btnbtn {
+  margin: 5px;
+  color: white;
+}
+.m-card {
+  height: 80%;
+}
+.lowerPart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: flex-end;
+}
+.content {
+  height: 120px;
+}
+.txt {
+  font-family: "Century Gothic";
+}
+
+.deleteBtn {
+  height: 2.5rem;
+}
+.editBtn {
+  background-color: white;
+  border: 1px solid white;
+  color: black;
+  height: 2.5rem;
+}
+.editBtn:hover {
+  background-color: #f1fcf2;
+  color: black;
+  border: 1px solid #dff1e0;
+}
+.expandColor {
+  background-color: #ddf5df;
+}
+.boldTitle {
+  font-weight: 600;
+}
+.expandable-row {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}

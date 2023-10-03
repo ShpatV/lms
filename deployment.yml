@@ -1,0 +1,40 @@
+variables:
+- group: lms-var-qa
+
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Deploy
+  jobs:
+  - job: DeployToECS
+    steps:
+    - checkout: self
+    - script: |
+        # Set AWS credentials as environment variables
+        export AWS_ACCESS_KEY_ID=$(aws_secret_key)
+        export AWS_SECRET_ACCESS_KEY=$(aws_secret_access_key)
+        # Authenticate with AWS ECR using explicit credentials
+        aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 888659321129.dkr.ecr.eu-central-1.amazonaws.com
+      displayName: "Authenticate with AWS ECR"
+    - script: |
+        # Build your Docker image
+        docker build -t demo-app-ecr-repo .
+      displayName: "Build Docker Image"
+    - script: |
+        # Tag the Docker image
+        docker tag demo-app-ecr-repo:latest 888659321129.dkr.ecr.eu-central-1.amazonaws.com/demo-app-ecr-repo:latest
+
+        # Push the Docker image to ECR
+        docker push 888659321129.dkr.ecr.eu-central-1.amazonaws.com/demo-app-ecr-repo:latest
+
+        # Update ECS service with the new image
+        aws ecs update-service --cluster demo-app-cluster --service cc-demo-app-service --force-new-deployment
+      displayName: "Deploy to ECS"
+      env:
+        AWS_DEFAULT_REGION: eu-central-1 

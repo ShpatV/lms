@@ -1,0 +1,20 @@
+# YAML config for continous build against develop & master branches
+trigger:
+  branches:
+    include:
+      - develop
+      - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    cd lms
+    npm install
+  displayName: "Install Dependencies"
+
+- script: |
+    cd lms
+    npm run build  # This line triggers the build step
+  displayName: "Build Phase"

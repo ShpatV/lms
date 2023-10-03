@@ -1,0 +1,33 @@
+
+trigger:
+  branches:
+    include:
+      - develop
+
+schedules:
+- cron: "59 23 * * *"
+  displayName: 'Daily Deployment'
+  branches:
+    include:
+      - develop
+  always: true
+
+jobs:
+- job: ScheduleDeploy
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - script: |
+      cd lms
+      npm install
+    displayName: "Installing all dependencies"
+
+  - script: |
+      cd lms/tests
+      npm test
+    displayName: "Running tests"
+
+  - script: |
+      cd lms
+      npm run build
+    displayName: "Building the App"

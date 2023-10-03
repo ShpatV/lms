@@ -1,0 +1,39 @@
+.course {
+  background-color: #acc9af;
+  padding: 3rem;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 60px;
+  font-family: "Century Gothic";
+  color: white;
+}
+.course:hover {
+  background-color: #9bb49d;
+}
+Button {
+  width: 100px;
+  height: 50px;
+}
+.confirmation-dialog-wrapper {
+  height: 100vh;
+  background-color: #323b33;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.95;
+}
+.confirmation-dialog {
+  width: 40%;
+  height: 45%;
+  background-color: #ebf3ec;
+  text-align: center;
+  border-radius: 60px;
+  font-family: "Century Gothic";
+  font-size: 25px;
+  padding: 30px;
+}
+.courseMsg {
+  font-family: "Century Gothic";
+  margin-top: 15%;
+  color: #273028;
+}

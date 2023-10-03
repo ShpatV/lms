@@ -1,0 +1,19 @@
+# Continous QC via Linting and Testing Part
+trigger:
+  branches:
+    include:
+      - develop
+      - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+
+- script: |
+    cd lms/tests
+    npm install
+    npm run lint
+    npm test
+  displayName: "Linting and Testing Phase"

@@ -1,0 +1,42 @@
+.custom-col-style {
+  background-color: #acc9af;
+  padding: 3rem;
+  text-align: center;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 50% 10px;
+  border-bottom-right-radius: 50% 10px;
+  font-family: "Century Gothic";
+  color: white;
+}
+
+/* Stilizimi për kolonën e dytë */
+.custom-col-style-2 {
+  padding: 6.4rem;
+  text-align: center;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px; /* Ndryshoni vlerën e radiusit sipas dëshirës */
+  border-bottom-right-radius: 10px; /* Ndryshoni vlerën e radiusit sipas dëshirës */
+  font-family: "Century Gothic";
+  color: white;
+}
+.btnCreate {
+  display: flex;
+  font-family: "Century Gothic";
+  border-radius: 5px;
+  justify-content: center;
+  color: rgb(7, 51, 53);
+  align-items: center;
+  background-color: #9fb9a2;
+  width: auto;
+  border: 1px solid rgb(123, 145, 146);
+}
+
+.btnCreate:hover {
+  color: white;
+  background-color: rgb(37, 99, 102);
+}
+.formColor {
+  background-color: #acc9af;
+}

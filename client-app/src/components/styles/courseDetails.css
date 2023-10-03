@@ -1,0 +1,46 @@
+.text {
+  color: black;
+  border: 2px solid red;
+}
+
+.card-bg {
+  font-family: "Century Gothic";
+  background-color: #acc9af;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.material {
+  background-color: #fafffb;
+  font-family: "Century Gothic";
+  border: 1px solid #cfe6d2;
+}
+.card-title {
+  color: rgb(7, 51, 53);
+  font-weight: bold;
+}
+.card-text {
+  color: rgb(7, 51, 53);
+}
+.firstPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnMaterial {
+  display: flex;
+  font-family: "Century Gothic";
+  border-radius: 5px;
+  justify-content: center;
+  color: rgb(7, 51, 53);
+  font-weight: bold;
+  align-items: center;
+  background-color: #9fb9a2;
+  width: auto;
+  border: 1px solid rgb(123, 145, 146);
+}
+.btnMaterial:hover {
+  color: white;
+  background-color: rgb(37, 99, 102);
+}
